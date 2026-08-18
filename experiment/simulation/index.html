@@ -1,13 +1,257 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<!-- Add CSS at the head of HTML file -->
-    <link rel="stylesheet" href="./css/main.css">
+    <meta charset="UTF-8">
+    <title>Osteometry of Clavicle Simulation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/clavicle.css">
 </head>
 <body>
-		<!-- Your code goes here-->
 
-	<!-- Add JS at the bottom of HTML file --> 
-        <script src="./js/main.js"></script>
+<div id="sidebar">
+    <h2>Clavicle Lab</h2>
+
+    <button class="nav-btn active" onclick="setMode('length', event)">
+        1. Maximum Length
+    </button>
+
+    <button class="nav-btn" onclick="setMode('mid_dia', event)">
+        2. Middle Shaft Diameter
+    </button>
+
+    <button class="nav-btn" onclick="setMode('mid_curve', event)">
+        3. Middle Curvature Angle
+    </button>
+
+    <button class="nav-btn" onclick="setMode('lat_curve', event)">
+        4. Lateral Curvature Angle
+    </button>
+
+    <button class="nav-btn" onclick="setMode('girth', event)">
+        5. Least Shaft Girth
+    </button>
+
+    <button class="nav-btn" onclick="setMode('indices', event)">
+        6. Clavicle Indices
+    </button>
+</div>
+
+
+<div id="workspace">
+
+    <img id="bone" src="images/clavicle.png"
+         onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Clavicle_-_anterior_view.png/300px-Clavicle_-_anterior_view.png'">
+
+    <!-- Osteometric Board -->
+    <div id="tool-board">
+
+    <!-- Measurement Scale -->
+    <div id="scale"></div>
+
+    <!-- Wooden Surface -->
+    <div id="board-surface"></div>
+
+    <!-- Fixed Wall -->
+    <div id="fixed-wall" class="board-wall"></div>
+
+    <!-- Movable Wall -->
+    <div id="movable-wall" class="board-wall">
+        Drag
+    </div>
+</div>
+   <!-- REALISTIC SLIDING CALIPER -->
+    <div id="tool-caliper">
+
+        <!-- Main scale -->
+        <div id="caliper-body">
+
+            <!-- fixed jaw -->
+            <div class="jaw fixed-jaw">
+                <div class="jaw-top"></div>
+                <div class="jaw-bottom"></div>
+            </div>
+
+            <!-- ruler -->
+            <div id="caliper-ruler">
+
+                <div class="caliper-scale"></div>
+
+            </div>
+            <!-- movable slider -->
+            <div class="slider" id="caliper-slider">
+
+                <div class="jaw movable-jaw">
+                    <div class="jaw-top"></div>
+                    <div class="jaw-bottom"></div>
+                </div>
+
+                <div class="slider-body"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- REALISTIC GONIOMETER -->
+ <div id="tool-goniometer">
+
+    <div id="goniometer">
+
+        <div id="gonio-protractor">
+
+            <div id="gonio-scale"></div>
+
+        </div>
+
+        <div class="gonio-center" id="gonio-center"></div>
+
+        <div class="gonio-arm fixed-arm" id="gonio-arm-1"></div>
+
+        <div class="gonio-arm movable-arm" id="gonio-arm-2"></div>
+
+    </div>
+
+</div>
+
+    <!-- REALISTIC MEASURING TAPE (Least Shaft Girth) -->
+    <div id="tool-tape">
+
+        <!-- fixed "wrap point" pin held against the narrowest part of the shaft -->
+        <div id="tape-anchor"></div>
+
+        <!-- tape band that stretches out from the anchor -->
+        <div id="tape-band"></div>
+
+        <!-- draggable metal end-tab you pull to size the loop -->
+        <div id="tape-end">
+            <div class="tape-tab">&#8596;</div>
+        </div>
+
+    </div>
+
+<!-- clavicle indices section -->
+<!-- ================= CLAVICLE INDICES ================= -->
+<div id="tool-clavicle-indices">
+
+    <h2>Clavicle Indices Calculator</h2>
+
+    <!-- ===================================== -->
+    <!-- Caliber Index -->
+    <!-- ===================================== -->
+
+    <div class="index-block">
+
+        <h3>Caliber Index (Shaft Thickness vs Length)</h3>
+
+        <div class="formula-title">
+            Formula:
+            <span class="formula-text">
+                Middle Shaft Diameter × 100 / Maximum Clavicle Length
+            </span>
+        </div>
+
+        <div class="formula">
+
+            <div class="fraction">
+
+                <span class="top">
+
+                    <input type="number"
+                           id="caliber_num"
+                           placeholder="____"
+                           step="0.01">
+
+                    × 100
+
+                </span>
+
+                <span class="bottom">
+
+                    <input type="number"
+                           id="caliber_den"
+                           placeholder="____"
+                           step="0.01">
+
+                </span>
+
+            </div>
+
+            =
+
+            <input type="text"
+                   id="ans_caliber"
+                   readonly>
+
+        </div>
+
+    </div>
+
+    <!-- ===================================== -->
+    <!-- Robusticity Index -->
+    <!-- ===================================== -->
+
+    <div class="index-block">
+
+        <h3>Robusticity Index</h3>
+
+        <div class="formula-title">
+            Formula:
+            <span class="formula-text">
+                Least Shaft Girth × 100 / Maximum Clavicle Length
+            </span>
+        </div>
+
+        <div class="formula">
+
+            <div class="fraction">
+
+                <span class="top">
+
+                    <input type="number"
+                           id="robust_num"
+                           placeholder="____"
+                           step="0.01">
+
+                    × 100
+
+                </span>
+
+                <span class="bottom">
+
+                    <input type="number"
+                           id="robust_den"
+                           placeholder="____"
+                           step="0.01">
+
+                </span>
+
+            </div>
+
+            =
+
+            <input type="text"
+                   id="ans_robust"
+                   readonly>
+
+        </div>
+
+    </div>
+   
+    <div id="IndexFeedback" style="margin-top:20px;"></div>
+
+</div>
+
+<div id="controls">
+    <div id="instruction"></div>
+    <div class="display-box">
+        <span id="readout">0</span> <span id="unit">mm</span>
+    </div>
+    <!-- <button class="btn-check" onclick="checkMeasurement()">Check Result</button> -->
+    <div id="feedback"></div>
+</div>
+
+<script src="js/clavicle.js"></script>
+
 </body>
 </html>
