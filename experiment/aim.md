@@ -1,1 +1,1 @@
-### Aim of the experiment
+AIM: To study the clavicle in detail in order to understand its anatomical features, take standard osteometric measurements, and assess its significance in sex determination, age estimation, laterality (side determination), and population variation.

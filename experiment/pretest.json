@@ -2,35 +2,154 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "The clavicle is classified as a:",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Flat bone",
+        "b": "Short bone",
+        "c": "Long bone",
+        "d": "Irregular bone"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "The clavicle is not classified as a flat bone.",
+        "b": "The clavicle is not classified as a short bone.",
+        "c": "The clavicle is classified as a long bone, although it has several unique features compared with other long bones.",
+        "d": "The clavicle is not classified as an irregular bone."
       },
-      "correctAnswer": "a",
+      "correctAnswer": "c",
       "difficulty": "beginner"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "Which of the following makes the clavicle unique among long bones?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "It has a medullary cavity",
+        "b": "It ossifies by endochondral ossification only",
+        "c": "It lies horizontally",
+        "d": "It has an epiphysis at both ends"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "The clavicle does not have a typical medullary cavity like most long bones.",
+        "b": "The clavicle undergoes both intramembranous and endochondral ossification.",
+        "c": "The clavicle is unique among long bones because it lies horizontally and acts as a strut between the sternum and scapula.",
+        "d": "The clavicle does not have typical epiphyses at both ends."
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "The medial (sternal) end of the clavicle articulates with the:",
+      "answers": {
+        "a": "Body of sternum",
+        "b": "Manubrium of sternum",
+        "c": "Acromion of scapula",
+        "d": "Coracoid process"
+      },
+      "explanations": {
+        "a": "The medial end of the clavicle does not directly articulate with the body of the sternum.",
+        "b": "The medial or sternal end of the clavicle articulates with the manubrium of the sternum at the sternoclavicular joint.",
+        "c": "The acromion articulates with the lateral end of the clavicle.",
+        "d": "The coracoid process does not directly articulate with the clavicle."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "The lateral (acromial) end of the clavicle articulates with the:",
+      "answers": {
+        "a": "Glenoid cavity",
+        "b": "Coracoid process",
+        "c": "Acromion process",
+        "d": "Spine of scapula"
+      },
+      "explanations": {
+        "a": "The glenoid cavity articulates with the head of the humerus.",
+        "b": "The coracoid process is related to the clavicle but does not form the acromioclavicular joint.",
+        "c": "The lateral or acromial end of the clavicle articulates with the acromion of the scapula at the acromioclavicular joint.",
+        "d": "The spine of the scapula does not directly articulate with the clavicle."
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which part of the clavicle is most commonly fractured?",
+      "answers": {
+        "a": "Medial third",
+        "b": "Lateral third",
+        "c": "Middle third",
+        "d": "Acromial end"
+      },
+      "explanations": {
+        "a": "Fractures of the medial third are relatively uncommon.",
+        "b": "The lateral third can be fractured, but it is less commonly affected than the middle third.",
+        "c": "The middle third, particularly near the junction of the medial two-thirds and lateral one-third, is the most common site of clavicular fracture.",
+        "d": "The acromial end is not the most common site of clavicular fracture."
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "The conoid tubercle is located on the:",
+      "answers": {
+        "a": "Medial end of the clavicle",
+        "b": "Lateral third of clavicle",
+        "c": "Anterior border",
+        "d": "Superior surface"
+      },
+      "explanations": {
+        "a": "The conoid tubercle is not located at the medial end.",
+        "b": "The conoid tubercle is located on the inferior surface of the lateral third of the clavicle.",
+        "c": "The conoid tubercle is not located on the anterior border.",
+        "d": "The conoid tubercle is located on the inferior, not superior, surface."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which structure is attached to the conoid tubercle of the clavicle?",
+      "answers": {
+        "a": "Deltoid",
+        "b": "Trapezius",
+        "c": "Subclavius",
+        "d": "Conoid ligament"
+      },
+      "explanations": {
+        "a": "The deltoid attaches to the lateral third of the clavicle but not specifically to the conoid tubercle.",
+        "b": "The trapezius attaches to the posterior border of the lateral third of the clavicle.",
+        "c": "The subclavius attaches to the subclavian groove on the inferior surface of the clavicle.",
+        "d": "The conoid ligament attaches to the conoid tubercle and forms part of the coracoclavicular ligament."
+      },
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "The clavicle primarily functions to:",
+      "answers": {
+        "a": "Protect the lungs",
+        "b": "Support and stabilize the shoulder",
+        "c": "Form the shoulder joint",
+        "d": "Produce blood cells"
+      },
+      "explanations": {
+        "a": "Although the clavicle contributes to the protection of structures in the root of the neck, this is not its primary function.",
+        "b": "The clavicle acts as a strut that supports and stabilizes the shoulder and keeps the upper limb away from the trunk.",
+        "c": "The shoulder joint is formed mainly by the head of the humerus and the glenoid cavity of the scapula.",
+        "d": "The clavicle does not primarily function in blood cell production."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which ossification feature is characteristic of the clavicle?",
+      "answers": {
+        "a": "Ossifies only by endochondral method",
+        "b": "Ossifies only by intramembranous method",
+        "c": "First bone to start ossifying in the embryo",
+        "d": "Last bone to ossify in the body"
+      },
+      "explanations": {
+        "a": "The clavicle does not ossify exclusively by the endochondral method.",
+        "b": "Although much of the clavicle develops by intramembranous ossification, it is not correct to state that it ossifies only by this method.",
+        "c": "The clavicle is the first bone in the body to begin ossification, starting early during embryonic development.",
+        "d": "The clavicle is not the last bone to begin ossification."
       },
       "correctAnswer": "c",
       "difficulty": "beginner"

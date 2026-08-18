@@ -2,37 +2,156 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "Maximum length of the clavicle is measured between:",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Conoid tubercle and acromial end",
+        "b": "Sternal end and acromial end",
+        "c": "Mid-shaft and lateral third",
+        "d": "Medial third and lateral third"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "The conoid tubercle is a landmark on the inferior surface of the clavicle but is not used as the endpoints for maximum clavicular length.",
+        "b": "Maximum length of the clavicle is measured as the straight distance between the sternal end and the acromial end.",
+        "c": "The mid-shaft and lateral third are not the endpoints used for measuring maximum clavicular length.",
+        "d": "The medial and lateral thirds are portions of the shaft and do not represent the anatomical endpoints of the clavicle."
       },
-      "correctAnswer": "a",
+      "correctAnswer": "b",
       "difficulty": "beginner"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "Preferred instrument for measuring maximum length of clavicle is:",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Sliding caliper",
+        "b": "Spreading caliper",
+        "c": "Osteometric board",
+        "d": "Goniometer"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "A sliding caliper is more suitable for measuring smaller linear dimensions such as shaft diameter.",
+        "b": "A spreading caliper is generally used for measuring breadth or distances between difficult-to-reach points.",
+        "c": "An osteometric board is preferred for measuring the maximum length of a long bone such as the clavicle.",
+        "d": "A goniometer is used for measuring angles rather than maximum bone length."
       },
       "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Middle shaft diameter of clavicle is measured at:",
+      "answers": {
+        "a": "Lateral one-third of the shaft",
+        "b": "Medial one-third of the shaft",
+        "c": "Exact mid-point of the shaft",
+        "d": "Near conoid tubercle"
+      },
+      "explanations": {
+        "a": "The lateral one-third is not the standard location for measuring the middle shaft diameter.",
+        "b": "The medial one-third is not the standard location for measuring the middle shaft diameter.",
+        "c": "Middle shaft diameter is measured at the exact midpoint of the clavicle.",
+        "d": "The conoid tubercle is an anatomical landmark and is not used to define the midpoint for shaft diameter measurement."
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Instrument used to measure middle shaft diameter of clavicle is:",
+      "answers": {
+        "a": "Osteometric board",
+        "b": "Measuring tape",
+        "c": "Sliding caliper",
+        "d": "Spreading caliper"
+      },
+      "explanations": {
+        "a": "An osteometric board is primarily used to measure the overall length of a bone.",
+        "b": "A measuring tape is less suitable for obtaining an accurate diameter of the clavicular shaft.",
+        "c": "A sliding caliper is used to measure the diameter or breadth of the clavicular shaft accurately.",
+        "d": "A spreading caliper is generally used for measurements between points that are difficult to access with a sliding caliper."
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Middle curvature angle of clavicle is formed between:",
+      "answers": {
+        "a": "Medial end and lateral end",
+        "b": "Shaft and acromial end",
+        "c": "Medial half axis and lateral half axis",
+        "d": "Middle third and lateral third axis"
+      },
+      "explanations": {
+        "a": "The medial and lateral ends are endpoints of the bone and do not define the middle curvature angle.",
+        "b": "The shaft and acromial end do not define the axes used for calculating the middle curvature angle.",
+        "c": "The middle curvature angle is formed between the medial half axis and the lateral half axis of the clavicle.",
+        "d": "The middle and lateral third axes are not the standard axes used to define the middle curvature angle."
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Lateral curvature angle of clavicle is measured between:",
+      "answers": {
+        "a": "Medial and middle third axis",
+        "b": "Middle and lateral third axis",
+        "c": "Sternal end and shaft",
+        "d": "Acromial end and shaft"
+      },
+      "explanations": {
+        "a": "The medial and middle third axes are not used to define the lateral curvature angle.",
+        "b": "The lateral curvature angle is measured between the axes of the middle and lateral thirds of the clavicle.",
+        "c": "The sternal end and shaft do not define the specific axes used for this angle.",
+        "d": "The acromial end and shaft are not the standard reference axes for measuring the lateral curvature angle."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Instrument used to measure curvature angles of clavicle is:",
+      "answers": {
+        "a": "Sliding caliper",
+        "b": "Spreading caliper",
+        "c": "Goniometer",
+        "d": "Osteometric board"
+      },
+      "explanations": {
+        "a": "A sliding caliper is used primarily for linear dimensions such as breadth and diameter.",
+        "b": "A spreading caliper is used for linear measurements between anatomical landmarks.",
+        "c": "A goniometer is used to measure angles and is therefore suitable for measuring clavicular curvature angles.",
+        "d": "An osteometric board is used primarily for measuring bone length."
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Clavicular curvature angles are mainly useful in:",
+      "answers": {
+        "a": "Age determination",
+        "b": "Blood group identification",
+        "c": "Sex and population studies",
+        "d": "Pathological diagnosis"
+      },
+      "explanations": {
+        "a": "Clavicular curvature angles are not primarily used for determining age.",
+        "b": "Bone curvature measurements have no role in identifying blood groups.",
+        "c": "Clavicular curvature angles can provide useful anthropological information for sex estimation and population studies.",
+        "d": "Although abnormal curvature can have clinical relevance, this is not the primary anthropological application of these measurements."
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "While measuring clavicle length, the curvature of the bone should be:",
+      "answers": {
+        "a": "Followed exactly",
+        "b": "Ignored; straight distance taken",
+        "c": "Measured separately",
+        "d": "Corrected mathematically"
+      },
+      "explanations": {
+        "a": "Following the curvature would measure the curved surface or arc rather than the standard maximum linear length.",
+        "b": "For maximum clavicular length, the straight distance between the sternal and acromial ends is measured, ignoring the curvature of the bone.",
+        "c": "The curvature is not measured separately when determining maximum clavicular length.",
+        "d": "A mathematical correction is not required when the standard straight-line measurement is used."
+      },
+      "correctAnswer": "b",
       "difficulty": "beginner"
     }
   ]
