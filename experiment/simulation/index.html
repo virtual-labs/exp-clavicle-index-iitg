@@ -1,13 +1,105 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<!-- Add CSS at the head of HTML file -->
-    <link rel="stylesheet" href="./css/main.css">
+    <meta charset="UTF-8">
+    <title>Osteometry of Clavicle Simulation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/clavicle.css">
 </head>
 <body>
-		<!-- Your code goes here-->
 
-	<!-- Add JS at the bottom of HTML file --> 
-        <script src="./js/main.js"></script>
+<div id="sidebar">
+    <h2>Clavicle Lab</h2>
+
+    <button class="nav-btn active" onclick="setMode('length', event)">
+        1. Maximum Length
+    </button>
+
+    <button class="nav-btn" onclick="setMode('mid_dia', event)">
+        2. Middle Shaft Diameter
+    </button>
+
+    <button class="nav-btn" onclick="setMode('mid_curve', event)">
+        3. Middle Curvature Angle
+    </button>
+
+    <button class="nav-btn" onclick="setMode('lat_curve', event)">
+        4. Lateral Curvature Angle
+    </button>
+
+    <button class="nav-btn" onclick="setMode('indices', event)">
+        5. Clavicle Indices
+    </button>
+</div>
+
+
+<div id="workspace">
+
+    <img id="bone" src="images/clavicle.png"
+         onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Clavicle_-_anterior_view.png/300px-Clavicle_-_anterior_view.png'">
+
+    <!-- Osteometric Board -->
+    <div id="tool-board">
+        <div id="fixed-wall" class="board-wall"></div>
+        <div id="movable-wall" class="board-wall">Drag</div>
+    </div>
+
+    <!-- Sliding Calipers -->
+    <div id="tool-caliper">
+        <div class="caliper-jaw" id="caliper-jaw-1"></div>
+        <div class="caliper-jaw" id="caliper-jaw-2"></div>
+        <div id="caliper-bar"></div>
+    </div>
+
+    <!-- Goniometer -->
+    <div id="tool-goniometer">
+        <div id="goniometer">
+            <div class="gonio-arc"></div>
+            <div class="gonio-center" id="gonio-center"></div>
+            <div class="gonio-arm" id="gonio-arm-1"></div>
+            <div class="gonio-arm" id="gonio-arm-2"></div>
+        </div>
+    </div>
+</div>
+
+<!-- clavicle indices section -->
+<div id="tool-clavicle-indices" style="display:none; padding:20px;">
+
+<h3>Enter Measured Values to Calculate Clavicle Indices</h3>
+
+<label>Maximum Length (cm)</label>
+<input type="number" id="ans_length" step="0.01"><br><br>
+
+<label>Middle Shaft Diameter (cm)</label>
+<input type="number" id="ans_mid_dia" step="0.01"><br><br>
+
+<label>Least Shaft Girth (cm)</label>
+<input type="number" id="ans_least_girth" step="0.01"><br><br>
+
+<label>Caliber Index</label>
+<input type="number" id="ans_caliber" step="0.01"><br><br>
+
+<label>Robusticity Index</label>
+<input type="number" id="ans_robust" step="0.01"><br><br>
+
+<button onclick="checkIndices()">Check Result</button>
+
+<div id="IndexFeedback" style="margin-top:20px;"></div>
+
+</div>
+
+
+
+<div id="controls">
+    <div id="instruction"></div>
+    <div class="display-box">
+        <span id="readout">0</span> <span id="unit">mm</span>
+    </div>
+    <button class="btn-check" onclick="checkMeasurement()">Check Result</button>
+    <div id="feedback"></div>
+</div>
+
+<script src="js/clavicle.js"></script>
+
 </body>
 </html>
