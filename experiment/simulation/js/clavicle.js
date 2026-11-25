@@ -11,6 +11,10 @@ const CM_PER_PIXEL = 1/27;
 let CM_PER_PIXEL_GIRTH = 1/9.5;
 
 const TARGETS = {
+    length: {
+        val: 10.16, tol: 0.5, unit: "cm",
+        instr: "Measure maximum length using osteometric board."
+    },
     mid_dia: {
         val: 1.27, tol: 0.2, unit: "cm",
         instr: "Measure middle shaft diameter using sliding calipers."
@@ -81,6 +85,7 @@ function setMode(mode, event) {
     } else {
         controls.style.display = "block";
     }
+
     document.querySelectorAll(".nav-btn")
         .forEach(btn => btn.classList.remove("active"));
 
@@ -137,12 +142,12 @@ function setMode(mode, event) {
     }
     else if (mode === "mid_dia") {
 
-    document.getElementById("tool-caliper").style.display = "block";
+        document.getElementById("tool-caliper").style.display = "block";
 
-    const slider =
-        document.getElementById("caliper-slider");
+        const slider =
+            document.getElementById("caliper-slider");
 
-    slider.style.left = "350px";
+        slider.style.left = "350px";
     }
     else if (mode === "mid_curve" || mode === "lat_curve") {
         document.getElementById("tool-goniometer").style.display = "block";
@@ -229,22 +234,23 @@ function calibrateGirthTape(targetCm = 4) {
 /* ==============================
    INTERACTION
 ============================== */
+
 document.addEventListener("mousedown", e => {
 
-if (
-    (e.target.id === "bone" && !boneLocked) ||
-    e.target.id === "movable-wall"
-) {
+    if (
+        (e.target.id === "bone" && !boneLocked) ||
+        e.target.id === "movable-wall"
+    ) {
 
-    dragged = e.target;
+        dragged = e.target;
 
-    const rect = dragged.getBoundingClientRect();
+        const rect = dragged.getBoundingClientRect();
 
-    offset.x = e.clientX - rect.left;
-    offset.y = e.clientY - rect.top;
-}
+        offset.x = e.clientX - rect.left;
+        offset.y = e.clientY - rect.top;
+    }
 
-/* MOVE WHOLE CALIPER */
+    /* MOVE WHOLE CALIPER */
     else if (
         e.target.closest("#tool-caliper") &&
         !e.target.closest("#caliper-slider")
@@ -295,16 +301,17 @@ if (
 document.addEventListener("mousemove", e => {
 
     if (dragged) {
-    const workspace = document.getElementById("workspace").getBoundingClientRect();
+        const workspace = document.getElementById("workspace").getBoundingClientRect();
+
         /* BOARD */
         if (currentMode === "length" && dragged.id === "movable-wall") {
             const ws = document.getElementById("workspace").getBoundingClientRect();
             let x = e.clientX - ws.left;
             x = Math.max(310, Math.min(x, 800));
             dragged.style.left = x + "px";
-            currentReading = ((x - 310) * CM_PER_PIXEL );
-
+            currentReading = ((x - 310) * CM_PER_PIXEL);
         }
+
         /* MOVE BONE */
         else if (dragged.id === "bone") {
 
@@ -321,6 +328,7 @@ document.addEventListener("mousemove", e => {
             dragged.style.left = x + "px";
             dragged.style.top  = y + "px";
         }
+
         /* MOVE WHOLE CALIPER */
         else if (dragged.id === "tool-caliper") {
 
@@ -330,28 +338,30 @@ document.addEventListener("mousemove", e => {
             dragged.style.left = x + "px";
             dragged.style.top = y + "px";
         }
+
         else if (dragged.id === "caliper-slider") {
 
-        const caliperBody =
-            document.getElementById("caliper-body")
-            .getBoundingClientRect();
+            const caliperBody =
+                document.getElementById("caliper-body")
+                .getBoundingClientRect();
 
-        let x = e.clientX - caliperBody.left - offset.x;
+            let x = e.clientX - caliperBody.left - offset.x;
 
-        const minX = 60;
-        const maxX = 520;
+            const minX = 60;
+            const maxX = 520;
 
-        if (x < minX) x = minX;
-        if (x > maxX) x = maxX;
+            if (x < minX) x = minX;
+            if (x > maxX) x = maxX;
 
-        dragged.style.left = x + "px";
+            dragged.style.left = x + "px";
 
-        /* measurement calculation (caliper — unaffected by girth calibration) */
-        const fixedJawX = 60;
-        const distancePx = x - fixedJawX;
+            /* measurement calculation (caliper — unaffected by girth calibration) */
+            const fixedJawX = 60;
+            const distancePx = x - fixedJawX;
 
-        currentReading = distancePx * CM_PER_PIXEL;
-    }
+            currentReading = distancePx * CM_PER_PIXEL;
+        }
+
         /* STRETCH TAPE END (measures girth) */
         else if (dragged.id === "tape-end" && currentMode === "girth") {
 
@@ -382,7 +392,8 @@ document.addEventListener("mousemove", e => {
                 fb.innerText = "";
             }
         }
-}
+    }
+
     /* GONIOMETER */
     if (rotatingArm) {
         const center = document.getElementById("gonio-center").getBoundingClientRect();
@@ -398,10 +409,11 @@ document.addEventListener("mousemove", e => {
         if (diff > 180) diff = 360 - diff;
         currentReading = Math.round(diff);
     }
-        /* MOVE GONIOMETER BODY */
+
+    /* MOVE GONIOMETER BODY */
     else if (
         (currentMode === "mid_curve" || currentMode === "lat_curve") &&
-        dragged.id === "goniometer"
+        dragged && dragged.id === "goniometer"
     ) {
         const ws = document.getElementById("workspace").getBoundingClientRect();
 
@@ -412,9 +424,8 @@ document.addEventListener("mousemove", e => {
         dragged.style.top  = y + "px";
     }
 
-
-    document.getElementById("readout").innerText = 
-    parseFloat(currentReading).toFixed(2);
+    document.getElementById("readout").innerText =
+        parseFloat(currentReading).toFixed(2);
 });
 
 document.addEventListener("mouseup", () => {
@@ -430,6 +441,7 @@ function getRotation(el) {
     if (!el.style.transform) return 0;
     return parseFloat(el.style.transform.replace("rotate(", "").replace("deg)", ""));
 }
+
 function createScale() {
 
     const scale =
@@ -487,6 +499,7 @@ function createScale() {
         scale.appendChild(tick);
     }
 }
+
 /* ==============================
    CREATE CALIPER SCALE
 ============================== */
@@ -600,6 +613,7 @@ function createGonioScale() {
         }
     }
 }
+
 /* ==============================
    CHECK
 ============================== */
@@ -616,6 +630,7 @@ function checkMeasurement() {
         fb.innerText = `✖ Incorrect. Accepted value ≈ ${t.val} ${t.unit}`;
     }
 }
+
 function checkIndices() {
 
     const userCaliber =
@@ -647,6 +662,7 @@ function checkIndices() {
             `✖ Some calculations are incorrect. Score: ${score}/2`;
     }
 }
+
 /* ==============================
    CORRECT CLAVICLE INDICES
 ============================== */
@@ -698,6 +714,7 @@ function calculateClavicle(numId, denId, ansId) {
         ans.style.color = "red";
     }
 }
+
 /* ==============================
    LIVE UPDATE
 ============================== */
@@ -717,6 +734,7 @@ document.addEventListener("input", () => {
     );
 
 });
+
 /* ==============================
    BONE LOCK / UNLOCK
 ============================== */
