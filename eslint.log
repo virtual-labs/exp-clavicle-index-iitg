@@ -1,0 +1,8 @@
+
+/home/runner/work/exp-clavicle-index-iitg/exp-clavicle-index-iitg/experiment/simulation/js/clavicle.js
+   44:7   warning  'REAL_CLAVICLE' is assigned a value but never used  no-unused-vars
+  621:10  warning  'checkMeasurement' is defined but never used        no-unused-vars
+  634:10  warning  'checkIndices' is defined but never used            no-unused-vars
+
+✖ 3 problems (0 errors, 3 warnings)
+
